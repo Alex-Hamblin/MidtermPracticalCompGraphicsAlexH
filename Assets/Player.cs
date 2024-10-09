@@ -5,11 +5,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     bool spawncloud;
-    GameObject cloud;
+    public GameObject cloud;
     // Start is called before the first frame update
     void Start()
     {
-        
+        spawncloud = true;
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     }
     IEnumerator Clouds()
     {
-        Instantiate(cloud, gameObject.transform.position, Quaternion.identity);
+        Instantiate(cloud,new Vector3(-44.3f,-9.91f,-4.46f), Quaternion.identity);
         yield return new WaitForSeconds(5);
         spawncloud=true;
     }
